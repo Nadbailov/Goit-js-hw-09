@@ -5,7 +5,6 @@ import FullReload from 'vite-plugin-full-reload';
 
 export default defineConfig(({ command }) => {
   return {
-    base: '/Goit-js-hw-09/',
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
@@ -15,7 +14,6 @@ export default defineConfig(({ command }) => {
 
       rollupOptions: {
         input: glob.sync('./src/*.html'),
-
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
